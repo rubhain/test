@@ -1,0 +1,17 @@
+body {
+  background-image: url(https://wallpapercave.com/wp/wp7872562.jpg);
+}
+.text-center {
+  text-align: center !important;
+}
+
+.text-style {
+  color: yellow;
+  font-family: starwars;
+  font-size: 2rem;
+}
+
+@font-face {
+  font-family: starwars;
+  src: url(Starjedi.ttf);
+}
