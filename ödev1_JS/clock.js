@@ -24,19 +24,19 @@ function leftPad(data)
             day = 'Tuesday';
             break;
         case 3:
-            day = 'Wednesday'
+            day = 'Wednesday';
             break;
         case 4:
-            day = 'Thursday'
+            day = 'Thursday';
             break;
         case 5:
-            day = 'Friday'
+            day = 'Friday';
             break;
         case 6:
-            day = 'Saturday'
+            day = 'Saturday';
             break;
         case 7:
-            day = 'Sunday'
+            day = 'Sunday';
             break;
     }
     
