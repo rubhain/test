@@ -7,7 +7,6 @@
 
  [link](https://youtu.be/wDgQdr8ZkTw)
 
- ![Görsel](https://pbs.twimg.com/media/ExRzHm9XEAACLBR?format=jpg&name=large)
 
  ```javascript
  function helloWorld()
