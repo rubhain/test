@@ -1,3 +1,4 @@
+//get name
 const getN = (promptMessage = "What is your name?", promptTextId = "name") => {
   let data = prompt(promptMessage, "");
   document.getElementById(promptTextId).innerText = data.toLowerCase();
@@ -7,10 +8,10 @@ function leftPad(data) {
 }
 function showTime() {
   var date = new Date();
-  var hour = date.getHours();
-  var min = date.getMinutes();
-  var sec = date.getSeconds();
-  var day = date.getDay();
+  var hour = date.getHours;
+  var min = date.getMinutes;
+  var sec = date.getSeconds;
+  var day = date.getDay;
 
   switch (day) {
     case 1:
