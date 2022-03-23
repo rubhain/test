@@ -1,17 +1,16 @@
-//get name
-const getN = (promptMessage = "What is your name?", promptTextId = "name") => {
+const getName = (promptMessage = "What is your name?", promptTextId = "name") => {
   let data = prompt(promptMessage, "");
   document.getElementById(promptTextId).innerText = data.toLowerCase();
 };
-function leftPad(data) {
+function leftPad(data:any) {
   return data < 10 ? "0" + data : data;
 }
-function showTime() {
-  var date = new Date();
-  var hour = date.getHours;
-  var min = date.getMinutes;
-  var sec = date.getSeconds;
-  var day = date.getDay;
+function showTime():void{
+  var date:any = new Date();
+  var hour:number = date.getHours();
+  var min:number = date.getMinutes();
+  var sec:number = date.getSeconds();
+  var day:any = date.getDay();
 
   switch (day) {
     case 1:
@@ -43,5 +42,5 @@ function showTime() {
   setTimeout(showTime, 1000);
 }
 
-getN();
+getName();
 showTime();
