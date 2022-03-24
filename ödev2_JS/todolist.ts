@@ -1,3 +1,5 @@
+//not finished yet
+
 //add close button
 var myNodelist = document.getElementsByTagName("LI");
 var i;
