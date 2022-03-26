@@ -48,3 +48,5 @@ import fetch from "node-fetch";
   console.log("post1", post1);
   console.log("post2", post2);
 })();
+
+//exercise
