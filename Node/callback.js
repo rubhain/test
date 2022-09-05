@@ -14,8 +14,9 @@
 //});
 
 import fetch from "node-fetch";
+import axios from "axios";
 
-//fetch("https://jsonplaceholder.typicode.com/users/1")
+// fetch("https://jsonplaceholder.typicode.com/users/1")
 //  .then((data) => data.json())
 //  .then((users) => {
 //    console.log("Users loaded", users);
@@ -31,22 +32,26 @@ import fetch from "node-fetch";
 //      });
 //  });
 
-(async () => {
-  const users = await (
-    await fetch("https://jsonplaceholder.typicode.com/users")
-  ).json();
+// (async () => {
+//   const { data: users } = await axios(
+//     "https://jsonplaceholder.typicode.com/users"
+//   );
+//   const { data: post1 } = await axios(
+//     "https://jsonplaceholder.typicode.com/posts/1"
+//   );
+//   const { data: post2 } = await axios(
+//     "https://jsonplaceholder.typicode.com/posts/2"
+//   );
 
-  const post1 = await (
-    await fetch("https://jsonplaceholder.typicode.com/posts/1")
-  ).json();
+//   console.log("users", users);
+//   console.log("post1", post1);
+//   console.log("post2", post2);
+// })();
 
-  const post2 = await (
-    await fetch("https://jsonplaceholder.typicode.com/posts/2")
-  ).json();
+const getCommnets = () => {
+  return new Promise((resolve, reject) => {
+    console.log("comments");
+  });
+};
 
-  console.log("users", users);
-  console.log("post1", post1);
-  console.log("post2", post2);
-})();
-
-//exercise
+getCommnets().then(() => console.log("end"));
