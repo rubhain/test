@@ -11,5 +11,3 @@ export const getData = async (userId) => {
 
   return { getUser, getPosts };
 };
-
-console.log(await getData(1));
