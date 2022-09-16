@@ -12,7 +12,9 @@ interface contacts {
 }
 
 function Contacts() {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState([
+    { fullname: "Bugrahan", phone_number: 1123123 },
+  ]);
 
   useEffect(() => {
     console.log(contacts);
