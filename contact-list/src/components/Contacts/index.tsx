@@ -6,6 +6,10 @@ interface addContact {
   fullname: any;
   phone_number: any;
 }
+interface contacts {
+  fullname: any;
+  phone_number: any;
+}
 
 function Contacts() {
   const [contacts, setContacts] = useState([]);
@@ -16,7 +20,7 @@ function Contacts() {
 
   return (
     <div>
-      <List />
+      <List contacts={contacts} />
       <Form addContact={setContacts} contacts={contacts} />
     </div>
   );
