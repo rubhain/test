@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "../styles.css";
 
 const initialFormValues = { fullname: "", phone_number: "" };
 function Form({ addContact, contacts }: { addContact: any; contacts: any }) {
@@ -40,7 +41,7 @@ function Form({ addContact, contacts }: { addContact: any; contacts: any }) {
           onChange={onChangeInput}
         />
       </div>
-      <button>Add</button>
+      <button className="btn">Add</button>
     </form>
   );
 }

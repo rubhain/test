@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import List from "./List";
 import Form from "./Form";
+import "./styles.css";
 
 interface addContact {
   fullname: any;
@@ -21,7 +22,8 @@ function Contacts() {
   }, [contacts]);
 
   return (
-    <div>
+    <div id="container">
+      <h1>Contacts</h1>
       <List contacts={contacts} />
       <Form addContact={setContacts} contacts={contacts} />
     </div>
