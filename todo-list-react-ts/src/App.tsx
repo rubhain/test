@@ -1,9 +1,13 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useEffect, useState } from "react";
 import "./App.css";
+import Todo from "./components/Todo";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Todo />
+    </div>
+  );
 }
 
 export default App;
