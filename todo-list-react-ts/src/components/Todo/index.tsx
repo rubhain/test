@@ -3,7 +3,7 @@ import Form from "./Form";
 import List from "./List";
 
 function Todo() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState([{ task: "Task 1" }, { task: "Task 2" }]);
 
   useEffect(() => {
     console.log(tasks);
@@ -13,7 +13,7 @@ function Todo() {
       {" "}
       <h1>todos</h1>
       <Form addTask={setTasks} tasks={tasks} />
-      <List />
+      <List tasks={tasks} />
     </div>
   );
 }
