@@ -54,7 +54,7 @@ function Form({
         <form onSubmit={onSubmit}>
           <section className="main">
             <input
-              className="toggle-all"
+              className=""
               type="checkbox"
               defaultChecked={allCheck}
               onClick={onAllChecked}
