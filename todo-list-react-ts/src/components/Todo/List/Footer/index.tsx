@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../../../App.css";
 
 function Footer({
   tasks,
@@ -33,13 +32,13 @@ function Footer({
     }
   };
   return (
-    <footer>
-      <span>
+    <footer className="footer">
+      <span className="todo-count">
         {" "}
         <strong>{unCompleted.length}</strong>
         {unCompleted.length > 1 ? " items left" : " item left"}
       </span>
-      <ul>
+      <ul className="filters">
         <li>
           <a className={select[0]} id="All" onClick={selectedButton}>
             All

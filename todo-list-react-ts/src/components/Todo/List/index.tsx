@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Footer from "../Footer";
+import Footer from "./Footer";
 
 function List({
   tasks,
@@ -48,18 +48,19 @@ function List({
   return (
     <div>
       {" "}
-      <ul>
+      <ul className="todo-list">
         {tasks.map((task: any) => (
           <li key={task.id} id={task.id} className={`${isCompleted(task)}`}>
-            <div>
+            <div className="view">
               <input
+                className="toggle"
                 id={task.id}
                 type="checkbox"
                 defaultChecked={task.checked}
                 onClick={setChecked}
               />
               <label>{task.text.task}</label>
-              <button id={task.id} onClick={deleteTask} />
+              <button className="destroy" id={task.id} onClick={deleteTask} />
             </div>
           </li>
         ))}

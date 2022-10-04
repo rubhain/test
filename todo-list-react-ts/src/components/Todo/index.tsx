@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Footer from "./Footer";
+import Footer from "./List/Footer";
 import Form from "./Form";
 import List from "./List";
 
@@ -10,26 +10,40 @@ function Todo() {
   useEffect(() => {
     console.log(tasks);
   }, [tasks]);
-
-  return (
-    <div>
-      {" "}
-      <h1>todos</h1>
-      <Form
-        addTask={setTasks}
-        tasks={tasks}
-        setTasks={setTasks}
-        getAllCheckState={setAllCheck}
-      />
-      <List
-        tasks={tasks}
-        setTasks={setTasks}
-        allCheckState={!allCheck}
-        hide={hide}
-      />
-      <Footer tasks={tasks} setTasks={setTasks} setHide={setHide} />
-    </div>
-  );
+  if (tasks.length > 0) {
+    return (
+      <div className="todoapp">
+        {" "}
+        <h1>todos</h1>
+        <Form
+          addTask={setTasks}
+          tasks={tasks}
+          setTasks={setTasks}
+          getAllCheckState={setAllCheck}
+        />
+        <List
+          tasks={tasks}
+          setTasks={setTasks}
+          allCheckState={!allCheck}
+          hide={hide}
+        />
+        <Footer tasks={tasks} setTasks={setTasks} setHide={setHide} />
+      </div>
+    );
+  } else {
+    return (
+      <div className="todoapp">
+        {" "}
+        <h1>todos</h1>
+        <Form
+          addTask={setTasks}
+          tasks={tasks}
+          setTasks={setTasks}
+          getAllCheckState={setAllCheck}
+        />
+      </div>
+    );
+  }
 }
 
 export default Todo;

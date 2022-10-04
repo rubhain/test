@@ -52,17 +52,22 @@ function Form({
     return (
       <div>
         <form onSubmit={onSubmit}>
-          <input
-            type="checkbox"
-            defaultChecked={allCheck}
-            onClick={onAllChecked}
-          />
-          <input
-            name="task"
-            placeholder="What needs to be done?"
-            value={form.task}
-            onChange={onChangeInput}
-          />
+          <section className="main">
+            <input
+              className="toggle-all"
+              type="checkbox"
+              defaultChecked={allCheck}
+              onClick={onAllChecked}
+            />{" "}
+            <label htmlFor="toggle-all">Mark all as complete</label>
+            <input
+              className="new-todo"
+              name="task"
+              placeholder="What needs to be done?"
+              value={form.task}
+              onChange={onChangeInput}
+            />
+          </section>
         </form>
       </div>
     );
@@ -71,6 +76,7 @@ function Form({
       <div>
         <form onSubmit={onSubmit}>
           <input
+            className="new-todo"
             name="task"
             placeholder="What needs to be done?"
             value={form.task}
