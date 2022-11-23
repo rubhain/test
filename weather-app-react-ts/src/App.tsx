@@ -1,12 +1,15 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import List from "./components/List";
+import CityDropdown from "./components/CityDropdown";
+import { WeatherProvider } from "./context/WeatherContext";
 
 function App() {
   return (
     <div className="App">
-      <h1>Weather App</h1>
-      <List />
+      <WeatherProvider>
+        <CityDropdown />
+      </WeatherProvider>
     </div>
   );
 }
