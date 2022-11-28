@@ -17,7 +17,8 @@ const WeatherContext = createContext<WeatherContextType>({
 });
 
 export const WeatherProvider = ({ children }: { children: any }) => {
-  //set with usePosition
+  //set with geolocation
+
   const [city, setCity] = useState({});
   const [weather, setWeather] = useState();
   const values = { city, setCity, weather };
@@ -25,15 +26,15 @@ export const WeatherProvider = ({ children }: { children: any }) => {
 
   const getWeatherData = () => {
     axios(
-      `https://api.weatherbit.io/v2.0/forecast/daily?/&days=7&city=${city}&key=${process.env.REACT_APP_WEATHER_API_KEY}`
+      `https://api.weatherbit.io/v2.0/forecast/daily?/&days=8&city=${city}&key=${process.env.REACT_APP_WEATHER_API_KEY}`
     ).then((res: any) => {
       setWeather(res.data);
     });
   };
 
   useEffect(() => {
+    console.log(city, cityData);
     getWeatherData();
-    console.log(city, cityData, weather);
   }, [city]);
 
   return (
@@ -42,3 +43,6 @@ export const WeatherProvider = ({ children }: { children: any }) => {
 };
 
 export default WeatherContext;
+function getCurrentCity(latitude: number, longitude: number) {
+  throw new Error("Function not implemented.");
+}
