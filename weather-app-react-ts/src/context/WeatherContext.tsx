@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, SetStateAction, useEffect, useState } from "react";
 import cities from "../cities_of_turkey.json";
+import { usePosition } from "use-position";
 
 type WeatherContextType = {
   city: any;
@@ -17,12 +18,20 @@ const WeatherContext = createContext<WeatherContextType>({
 });
 
 export const WeatherProvider = ({ children }: { children: any }) => {
-  //set with geolocation
-
+  const watch = true;
+  const { latitude, longitude } = usePosition(watch);
   const [city, setCity] = useState({});
   const [weather, setWeather] = useState();
   const values = { city, setCity, weather };
   const cityData = cities.filter((prop) => prop.name === city);
+
+  useEffect(() => {
+    axios(
+      `https://api.weatherbit.io/v2.0/forecast/daily?/&days=8&lat=${latitude}&lon=${longitude}&key=${process.env.REACT_APP_WEATHER_API_KEY}`
+    ).then((res: any) => {
+      setWeather(res.data);
+    });
+  }, []);
 
   const getWeatherData = () => {
     axios(
